@@ -51,11 +51,11 @@
           </template>
         </el-table-column>
         <el-table-column label=" 操作"
-                         width="130px">
+                         width="80px">
           <template slot-scope="scope">
-            <el-button type="primary"
+            <!-- <el-button type="primary"
                        icon="el-icon-edit"
-                       size="mini"></el-button>
+                       size="mini"></el-button> -->
             <!-- @click="showEditDialog(scope.row.goods_id)" -->
             <el-button type="danger"
                        icon="el-icon-delete"
@@ -75,46 +75,6 @@
                      :total="total"
                      background>
       </el-pagination>
-
-      <!-- 商品修改对话框 -->
-      <!-- <el-dialog title="商品修改"
-                 :visible.sync="editDialogVisible"
-                 width="50%"
-                 @close="editDialogClosed"> -->
-
-      <!-- 修改表单区域 -->
-      <!-- <el-form :model="editForm"
-                 :rules="editFormRules"
-                 ref="editFormRef"
-                 label-width="100px">
-          <el-form-item label="商品名称:"
-                        prop="goods_name">
-            <el-input v-model="editForm.goods_name"></el-input>
-          </el-form-item>
-          <el-form-item label="商品价格:"
-                        prop="goods_price">
-            <el-input v-model="editForm.goods_price"
-                      type="number"></el-input>
-          </el-form-item>
-          <el-form-item label="商品重量:"
-                        prop="goods_weight">
-            <el-input v-model="editForm.goods_weight"
-                      type="number"></el-input>
-          </el-form-item>
-          <el-form-item label="商品数量:"
-                        prop="goods_number">
-            <el-input v-model="editForm.goods_number"
-                      type="number"></el-input>
-          </el-form-item>
-        </el-form>
-
-        <span slot="footer"
-              class="dialog-footer">
-          <el-button @click="editDialogVisible = false">取 消</el-button>
-          <el-button type="primary"
-                     @click="editGoodsInfo()">确 定</el-button>
-        </span>
-      </el-dialog> -->
 
     </el-card>
   </div>
@@ -210,46 +170,6 @@ export default {
     goAddPage () {
       this.$router.push('/goods/add')
     }
-    /*
-    // 展示编辑用户信息的对话框
-    async showEditDialog (id) {
-      const { data: res } = await this.$http.get('goods/' + id)
-      if (res.meta.status !== 200) {
-        return this.$message.error('获取商品信息失败！')
-      }
-      this.editForm = res.data
-
-      this.editDialogVisible = true
-    },
-    // 监听修改用户对话框的关闭
-    editDialogClosed () {
-      this.$refs.editFormRef.resetFields()
-    },
-    // 修改用户信息并提交
-    editGoodsInfo (id) {
-      this.$refs.editFormRef.validate(async valid => {
-        if (!valid) return
-        // 发起修改用户信息的数据请求
-        const { data: res } = await this.$http.put('goods/' + this.editForm.goods_id,
-          {
-            goods_name: this.editForm.goods_name,
-            goods_price: this.editForm.goods_price,
-            goods_weight: this.editForm.goods_weight,
-            goods_number: this.editForm.goods_number
-
-          })
-
-        if (res.meta.status !== 200) {
-          return this.$message.error('更新用户信息失败！')
-        }
-
-        this.$message.success('修改用户成功！')
-        // 隐藏用户对话框
-        this.editDialogVisible = false
-        // 重新获取用户列表
-        this.getGoodsList()
-      })
-    } */
 
   },
   computed: {
