@@ -287,8 +287,6 @@ export default {
         item.inputValue = ''
       })
 
-      console.log(res.data)
-
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {

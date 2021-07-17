@@ -255,7 +255,6 @@ export default {
     },
     // 选择项发生变化时触发
     parentCateChanged () {
-      console.log(this.selectedKeys)
       // 如果selectedKeys中的length>0证明选中了父级分类
       if (this.selectedKeys.length > 0) {
         // 父级分类的ID

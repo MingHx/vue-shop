@@ -238,7 +238,6 @@ export default {
     },
     // 处理图片的预览效果
     handlePreview (file) {
-      console.log(file)
       this.previewPath = file.response.data.url
       this.previewVisible = true
     },
@@ -278,7 +277,6 @@ export default {
         })
         form.attrs = this.addForm.attrs
 
-        console.log(form)
         // 发起添加商品请求
         // 商品名称需要唯一
         const { data: res } = await this.$http.post('goods', form)
